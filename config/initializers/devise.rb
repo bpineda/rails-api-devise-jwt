@@ -300,7 +300,6 @@ Devise.setup do |config|
     jwt.secret = Rails.application.secrets.devise_jwt_secret_key
     jwt.dispatch_requests = [
         ['POST', %r{^/users/sign_in$}],
-        ['DELETE', %r{^/users/sign_out$}],
         ['GET', %r{^/$}]
     ]
     jwt.request_formats = { user: [:json] }
