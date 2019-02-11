@@ -21,6 +21,14 @@ RSpec.describe 'POST /users/sign_in', type: :request do
       expect(response).to have_http_status(201)
     end
 
+    it 'returns JTW token in authorization header' do
+      expect(response.headers['Authorization']).to be_present
+    end
+
+    it 'returns valid JWT token' do
+      expect(response.headers['Authorization'].split.last).not_to be_nil
+    end
+
   end
 
 end
