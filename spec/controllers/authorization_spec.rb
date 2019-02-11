@@ -31,4 +31,12 @@ RSpec.describe 'POST /users/sign_in', type: :request do
 
   end
 
+  context 'when login params are incorrect' do
+    before { post url }
+    
+    it 'returns unathorized status' do
+      expect(response.status).to eq 401
+    end
+  end
+
 end
