@@ -6,7 +6,7 @@ This is a project to try out devise-jwt implementation
 + Install dependencies with bundle install
 + Generate db, run migrations and seeds. 
 
-  ``rails db:generate;
-  rails db:migrate;
-  rails db:seed``
-+ Run tests (rspec)
+  ``bundle exec rails db:generate;
+  bundle exec rails db:migrate;
+  bundle exec rails db:seed``
++ Run tests (bundle exec rspec)
