@@ -28,7 +28,6 @@ RSpec.describe 'POST /users/sign_in', type: :request do
     it 'returns valid JWT token' do
       expect(response.headers['Authorization'].split.last).not_to be_nil
     end
-
   end
 
   context 'when login params are incorrect' do
@@ -38,5 +37,13 @@ RSpec.describe 'POST /users/sign_in', type: :request do
       expect(response.status).to eq 401
     end
   end
+end
 
+RSpec.describe 'DELETE /users/sign_out', type: :request do
+  let(:url) { '/users/sign_out' }
+
+  it 'returns 204, no content' do
+    delete url
+    expect(response).to have_http_status(204)
+  end
 end
