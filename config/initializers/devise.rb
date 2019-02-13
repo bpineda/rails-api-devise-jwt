@@ -302,6 +302,9 @@ Devise.setup do |config|
         ['POST', %r{^/users/sign_in$}],
         ['GET', %r{^/$}]
     ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/users/sign_out$}],
+    ]
     jwt.request_formats = { user: [:json] }
     jwt.expiration_time = 8.hours.to_i
   end
