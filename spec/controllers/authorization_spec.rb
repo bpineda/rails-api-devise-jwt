@@ -17,8 +17,8 @@ RSpec.describe 'POST /users/sign_in', type: :request do
       post url, params: params
     end
 
-    it 'returns 201' do
-      expect(response).to have_http_status(201)
+    it 'returns 200' do
+      expect(response).to have_http_status(200)
     end
 
     it 'returns JTW token in authorization header' do
